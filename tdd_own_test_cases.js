@@ -11,4 +11,20 @@ function countVowels(textToCount) {
   return count(textToCount);
 }
 
-module.exports = { isAllCaps, countVowels /*, mergeArrays, findDuplicate*/ };
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+function mergeAndSortArrays(unsortedArray1, unsortedArray2) {
+  return unsortedArray1.concat(unsortedArray2).sort((a, b) => a - b);
+}
+
+function findDuplicate(arrayWithDuplicates) {
+  return arrayWithDuplicates.filter(
+    (value, index) => arrayWithDuplicates.indexOf(value) !== index
+  );
+}
+
+module.exports = {
+  isAllCaps,
+  countVowels,
+  mergeAndSortArrays,
+  findDuplicate,
+};
