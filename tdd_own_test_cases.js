@@ -3,4 +3,12 @@ function isAllCaps(wordToVerify) {
   return false;
 }
 
-module.exports = { isAllCaps /*, countVowels, mergeArrays, findDuplicate*/ };
+function countVowels(textToCount) {
+  const count = (textToCount) =>
+    Array.from(textToCount).filter((char) =>
+      "aeiou".includes(char.toLowerCase())
+    ).length;
+  return count(textToCount);
+}
+
+module.exports = { isAllCaps, countVowels /*, mergeArrays, findDuplicate*/ };
